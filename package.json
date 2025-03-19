@@ -1,0 +1,35 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "build": "npm run build:front && npm run build:back",
+    "build:front": "cd ../ibCode-2.0 && npm run build && cp -r dist ../back/",
+    "build:back": "npm install --production",
+    "deploy": "pm2 start ecosystem.config.js"
+  },
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "follow-redirects": "^1.15.9",
+    "fs": "^0.0.1-security",
+    "joi": "^17.13.3",
+    "koa": "^2.15.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-cors": "^0.0.16",
+    "koa-jwt": "^4.0.4",
+    "koa-logger": "^3.2.1",
+    "koa-static": "^5.0.0",
+    "marked": "^15.0.6",
+    "mongoose": "^8.9.5",
+    "openai": "^4.80.0",
+    "stream": "^0.0.3",
+    "zhipuai-sdk-nodejs-v4": "^0.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
